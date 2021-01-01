@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RMDesktopUI.ViewModels
 {
-    public class SalesVieModel : Screen
+    public class SalesViewModel : Screen
     {
         private BindingList<string> _products;
 
@@ -34,15 +34,15 @@ namespace RMDesktopUI.ViewModels
             }
         }
 
-        private string _itemQuantity;
+        private int _itemQuantity;
 
-        public string ItemQuantity
+        public int ItemQuantity
         {
             get { return _itemQuantity; }
             set 
             { 
                 _itemQuantity = value;
-                NotifyOfPropertyChange(() => Products);
+                NotifyOfPropertyChange(() => ItemQuantity);
             }
         }
 
