@@ -20,6 +20,15 @@ namespace RMDesktopUI.Library.Api
             InitializeClient();
             _loginUser = loginUser;
         }
+
+        public HttpClient ApiClient
+        {
+            get
+            {
+                return _apiClient;
+            }
+        }
+
         private void InitializeClient()
         {
             string api = ConfigurationManager.AppSettings["api"];

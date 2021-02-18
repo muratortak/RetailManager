@@ -92,6 +92,7 @@ namespace RMDesktopUI.ViewModels
         {
             try
             {
+                //Pwd123456.
                 ErrorMessage = string.Empty;
                 var result = await _apiHelper.Authenticate(UserName, Password);
 
