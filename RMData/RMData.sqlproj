@@ -69,6 +69,10 @@
     <Build Include="dbo\Tables\Product.sql" />
     <Build Include="dbo\Tables\Inventory.sql" />
     <Build Include="dbo\Stored Procedures\sqlUserLookup.sql" />
+    <Build Include="dbo\Stored Procedures\spProduct_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\spSale_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spSaleDetail_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spSale_Lookup.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\RMData.publish.xml" />
