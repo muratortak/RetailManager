@@ -22,7 +22,7 @@ namespace RMDataManagerLibrary.DataAccess
 
             List<SaleDetailDBModel> details = new List<SaleDetailDBModel>();
             ProductData products = new ProductData();
-            var taxRate = ConfigHelper.GetTaxRate();
+            var taxRate = ConfigHelper.GetTaxRate()/100;
             foreach(var item in saleInfo.SaleDetails)
             {
                 var detail = new SaleDetailDBModel

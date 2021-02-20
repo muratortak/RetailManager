@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spSale_Insert]
-	@id int output,
+	@Id int output,
 	@CashierId nvarchar(128),
 	@SaleDate datetime2,
 	@SubTotal money,
