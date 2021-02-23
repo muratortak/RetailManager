@@ -47,6 +47,7 @@ namespace RMDesktopUI
 
             _container.Instance(_container)
                 .PerRequest<IProductEndpoint, ProductEndpoint>()
+                .PerRequest<IUserEndPoint, UserEndPoint>()
                 .PerRequest<ISaleEndpoint, SaleEndpoint>();
 
             _container
