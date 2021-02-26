@@ -1,16 +1,19 @@
-﻿using RMDataManagerLibrary.DataAccess;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using RMDataManagerLibrary.DataAccess;
 using RMDataManagerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Threading.Tasks;
 
-namespace RMDataManager.Controllers
+namespace RMApi.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     [Authorize]
-    public class InventoryController : ApiController
+    public class InventoryController : ControllerBase
     {
         // Admin OR Manager roles
         [Authorize(Roles = "Admin,Manager")]
@@ -21,7 +24,6 @@ namespace RMDataManager.Controllers
         }
 
         // Admin AND WarehouseWorker role
-        [Authorize(Roles = "WarehouseWorker")]
         [Authorize(Roles = "Admin")]
         public void Post(InventoryModel item)
         {
