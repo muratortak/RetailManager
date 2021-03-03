@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Extensions.Configuration;
 using RMDataManager.Library.DataAccess;
 using RMDataManager.Models;
 using RMDataManagerLibrary.Models;
@@ -14,11 +15,18 @@ namespace RMDataManager.Controllers
     [Authorize]
     public class UserController : ApiController
     {
+        private readonly IConfiguration _config;
+
+        public UserController(IConfiguration config)
+        {
+            _config = config;
+        }
+
         [HttpGet]
         public UserModel GetById()
         {
             string userId = RequestContext.Principal.Identity.GetUserId();
-            UserData data = new UserData();
+            UserData data = new UserData(_config);
 
             return data.GetUserById(userId).First();
         }
